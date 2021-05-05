@@ -1,0 +1,93 @@
+.nav-menu-btn {
+  margin-right: 0.75rem; 
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.nav-menu-burger {
+  width: 1.5rem;
+  height: 0.25rem;
+  background: var(--primary-color);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgb(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.nav-menu-burger::before,
+.nav-menu-burger::after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 0.25rem;
+  background: var(--primary-color);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgb(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.nav-menu-burger::before {
+  transform: translateY(-0.5rem)
+}
+
+.nav-menu-burger::after {
+  transform: translateY(0.5rem)
+}
+
+.nav-menu-burger:hover,
+.nav-menu-burger:hover::before, .nav-menu-burger:hover::after{
+  background: var(--hover-color);
+}
+
+/* Animation  */
+.nav-menu-btn.open .nav-menu-burger {
+  transform: translateX(-1.5rem);
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav-menu-btn.open .nav-menu-burger::before {
+  transform: rotate(45deg) translate(1.1rem, -1.1rem);
+  background: var(--hover-color);
+}
+
+.nav-menu-btn.open .nav-menu-burger::after {
+  transform: rotate(-45deg) translate(1.1rem, 1.1rem);
+}
+
+/* Media Queries */
+@media screen and (max-width: 786px){
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .nav .nav-menu {
+    position: absolute;
+    height: cal(100vh - 100%);
+    width: 100%;
+    max-width: 12rem;
+    margin-left: 0;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    display: none;
+    padding: 1rem;
+    line-height: 3rem;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateX(-10vh);
+    transition: all .3s ease-in-out;
+    z-index: -1;
+  } 
+
+  .nav .nav-menu.open {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

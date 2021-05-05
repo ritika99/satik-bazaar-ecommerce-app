@@ -1,0 +1,161 @@
+@import url("https://satik-ui.netlify.app/styles/styles.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+.logo {
+  height: 2.75rem;
+}
+
+/* ------- */
+.form-box {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 25.5rem;
+  margin: auto;
+}
+
+.profile-container {
+  flex-wrap: wrap;
+}
+
+/* ------ */
+.App {
+  font-family: sans-serif;
+}
+
+img,
+embed,
+video,
+object {
+  max-width: 100%;
+}
+
+.container-flex {
+  align-items: stretch;
+}
+
+/* card  */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-badge-group {
+  display: flex;
+  justify-content: center;
+}
+
+.badge {
+  font-size: 0.625rem;
+}
+
+.btn-solid {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.btn-solid:hover {
+  background-color: var(--hover-color);
+  color: var(--white-color);
+}
+
+.card-horizontal {
+  height: 8rem;
+}
+
+.card-horizontal-image {
+  height: 8rem;
+}
+
+.card-dismiss .icon-cross:hover {
+  background-color: var(--white-color);
+  color: black;
+}
+
+.card-button .para-text-md {
+  padding: 0 0.5rem;
+}
+
+.card-horizontal .card-button {
+  padding-left: 1rem;
+}
+
+.flex {
+  position: relative;
+  top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+
+.container-inside {
+  max-width: 68rem;
+}
+
+.input-field {
+  width: 24rem;
+}
+
+.margin-top {
+  margin-top: 4rem;
+}
+
+.container {
+  padding-left: 0;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-btn {
+  position: absolute;
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-rg {
+  display: none;
+}
+
+@media screen and (max-width: 525px) {
+ .btn-lg {
+   display: none;
+ }
+
+ .btn-rg {
+   display: inline;
+ }
+}
+
+.heading-main {
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.card-overlay-btn {
+  width: 14rem;
+  margin: 0.2rem;
+}
+
+.card-inactive {
+  cursor: not-allowed; 
+}
+
+.container-flex-column {
+  align-content: center;
+}
+
+.img-md {
+  width: 12rem;
+}
+
+.footer {
+  position: static;
+  bottom: 0;
+}

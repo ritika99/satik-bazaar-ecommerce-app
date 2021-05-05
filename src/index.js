@@ -3,10 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import setupMockServer from "./api/mock.server";
+
+import { DataProvider } from "./context/data-context";
+import {BrowserRouter as Router} from "react-router-dom";
+import { AuthProvider } from "./context/auth-context";
+
+import "./components/navigation/navMenu/nav-menu.css";
+import "./styles.css";
+
+setupMockServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <AuthProvider>
+  <Router>
+    <DataProvider>
+      <App />
+    </DataProvider>
+  </Router>
+  </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
