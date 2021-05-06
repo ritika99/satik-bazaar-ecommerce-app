@@ -22,8 +22,9 @@ export function DataProvider({ children }) {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get("/api/products");
-        dispatch({ type: "LOAD_PRODUCT_LIST", payload: data.products });
+        const res = await axios.get("https://satik-bazaar-api.herokuapp.com/products");
+        dispatch({ type: "LOAD_PRODUCT_LIST", payload: res.data.products });
+        console.log(res.data);
       } catch (error) {console.log(error)}
     })();
   }, []);

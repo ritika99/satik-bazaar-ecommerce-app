@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { useData } from "../../context/data-context";
 import { NavMenu } from "./navMenu/navMenu";
 import logo from "../../assets/satik-logo.png";
+import { useAuth } from "../../context/auth-context";
 
 export function Navigation() {
   const { data, dispatch } = useData();
+  const {currUser} = useAuth();
   return (
     <nav className="nav nav-fixed">
       <div className="nav-container container-inside">
@@ -29,7 +31,7 @@ export function Navigation() {
                 </Link>
               </li>
               <li className="nav-pill colored-list inline-list">
-                <Link to="products" className="nav-link">
+                <Link to="/products" className="nav-link">
                   Products
                 </Link>
               </li>

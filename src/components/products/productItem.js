@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../context/auth-context";
 import { useData } from "../../context/data-context";
@@ -5,7 +6,7 @@ import { calculateDiscount } from "./calculateDiscount";
 
 export function ProductItem({ product }) {
   const { dispatch } = useData();
-  const { isUserLoggedIn } = useAuth();
+  const { isUserLoggedIn, currUser } = useAuth();
   const navigate = useNavigate();
 
   const addToWishListHandler = (product) => {
@@ -17,7 +18,7 @@ export function ProductItem({ product }) {
       : navigate("/login");
   };
 
-  const addToCartHandler = (product) => {
+  const addToCartHandler = async (product) => {
     isUserLoggedIn
       ? product.inCart
         ? navigate("/cart")
