@@ -17,14 +17,14 @@ export function reducer(state, action) {
         wishList: [
           ...state.wishList,
           ...state.productList
-            .filter((item) => item.id === action.payload.id)
+            .filter((item) => item._id === action.payload._id)
             .map((item) => ({ ...item, inWishlist: true }))
         ],
         productList: state.productList.map((item) =>
-          item.id === action.payload.id ? { ...item, inWishlist: true } : item
+          item._id === action.payload._id ? { ...item, inWishlist: true } : item
         ),
         cartList: state.cartList.map((item) =>
-          item.id === action.payload.id ? { ...item, inWishlist: true } : item
+          item._id === action.payload._id ? { ...item, inWishlist: true } : item
         )
       };
 
@@ -32,13 +32,13 @@ export function reducer(state, action) {
       return {
         ...state,
         wishList: state.wishList.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item._id !== action.payload._id
         ),
         productList: state.productList.map((item) =>
-          item.id === action.payload.id ? { ...item, inWishlist: false } : item
+          item._id === action.payload._id ? { ...item, inWishlist: false } : item
         ),
         cartList: state.cartList.map((item) =>
-          item.id === action.payload.id ? { ...item, inWishlist: false } : item
+          item._id === action.payload._id ? { ...item, inWishlist: false } : item
         )
       };
 
@@ -48,14 +48,14 @@ export function reducer(state, action) {
         cartList: [
           ...state.cartList,
           ...state.productList
-            .filter((item) => item.id === action.payload.id)
+            .filter((item) => item._id === action.payload._id)
             .map((item) => ({ ...item, inCart: true, count: 1 }))
         ],
         productList: state.productList.map((item) =>
-          item.id === action.payload.id ? { ...item, inCart: true } : item
+          item._id === action.payload._id ? { ...item, inCart: true } : item
         ),
         wishList: state.wishList.map((item) =>
-          item.id === action.payload.id ? { ...item, inCart: true } : item
+          item._id === action.payload._id ? { ...item, inCart: true } : item
         )
       };
 
@@ -63,13 +63,13 @@ export function reducer(state, action) {
       return {
         ...state,
         cartList: state.cartList.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item._id !== action.payload._id
         ),
         productList: state.productList.map((item) =>
-          item.id === action.payload.id ? { ...item, inCart: false } : item
+          item._id === action.payload._id ? { ...item, inCart: false } : item
         ),
         wishList: state.wishList.map((item) =>
-          item.id === action.payload.id ? { ...item, inCart: false } : item
+          item._id === action.payload._id ? { ...item, inCart: false } : item
         )
       };
 
@@ -77,7 +77,7 @@ export function reducer(state, action) {
       return {
         ...state,
         cartList: state.cartList.map((item) =>
-          item.id === action.payload.id
+          item._id === action.payload._id
             ? { ...item, count: item.count + 1 }
             : item
         )
@@ -87,7 +87,7 @@ export function reducer(state, action) {
       return {
         ...state,
         cartList: state.cartList.map((item) =>
-          item.id === action.payload.id
+          item._id === action.payload._id
             ? { ...item, count: item.count > 1 ? item.count - 1 : item.count }
             : item
         )
@@ -123,10 +123,10 @@ export function reducer(state, action) {
         navToggle: !state.navToggle
       };
 
-    case "TOOGLE_NAV_SIDEBAR_MENU":
+    case "TOOGLE_NAV_S_IDEBAR_MENU":
       return {
         ...state,
-        navSidebarToggle: !state.navSidebarToggle
+        navS_idebarToggle: !state.navS_idebarToggle
       };
 
     default:

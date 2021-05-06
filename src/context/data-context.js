@@ -23,8 +23,8 @@ export function DataProvider({ children }) {
     (async () => {
       try {
         const res = await axios.get("https://satik-bazaar-api.herokuapp.com/products");
-        console.log(res);
         dispatch({ type: "LOAD_PRODUCT_LIST", payload: res.data.products });
+        console.log(res.data);
       } catch (error) {console.log(error)}
     })();
   }, []);

@@ -13,13 +13,13 @@ export function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="products" element={<Products />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Signup />} />
-      <Route path="password/forgot" element={<ForgotPassword />} />
-      <PrivateRoute path="cart" element={<Cart />} />
-      <PrivateRoute path="wishlist" element={<Wishlist />} />
-      <PrivateRoute path="profile" element={<Profile />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/password/forgot" element={<ForgotPassword />} />
+      <PrivateRoute path="/cart" element={<Cart />} />
+      <PrivateRoute path="/wishlist" element={<Wishlist />} />
+      <PrivateRoute path="/profile" element={<Profile />} />
     </Routes>
   );
 }
